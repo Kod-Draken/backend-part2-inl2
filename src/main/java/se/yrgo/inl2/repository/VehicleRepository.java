@@ -6,7 +6,9 @@ import se.yrgo.inl2.entity.Vehicle;
 import java.util.List;
 
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
-    public List<Vehicle> findVehicleByCustomerId(int customerId);
-    public List<Vehicle> findVehiclesByBrand(String brand);
+    List<Vehicle> findVehicleByCustomerId(int customerId);
 
+    List<Vehicle> findVehiclesByBrand(String brand);
+
+    Vehicle findVehicleById(int vehicleId);
 }

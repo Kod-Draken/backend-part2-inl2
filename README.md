@@ -2,18 +2,50 @@
 
 Kör skriptet **run.sh**
 
+Se filen **brunoimport.json**, den kan importeras i Postman, Bruno, mfl. för att smidigt testa restanrop.
+
 Bas-URL: http://localhost:8080
 
-POST /customer – Skapar en kund. Parametrar: name (kundens namn), phone (telefonnummer).
 
-POST /vehicle – Skapar ett fordon. Parametrar: licenceNumber (registreringsnummer), brand (märke), model (modell), productionYear (årsmodell).
 
-GET /customer-id – Hämtar kundens id med namn. Parametrar: name (kundens namn).
+## Endpoints
 
-GET /customers – Hämtar alla kunder med deras fordon. Inga parametrar.
+### POST /customer
+Skapar en ny kund.  
+Parametrar (query params):
+- **name**: String
+- **phone**: String
 
-GET /vehicles – Hämtar alla fordon. Inga parametrar.
+### POST /vehicle
+Skapar ett nytt fordon.  
+Parametrar:
+- **licenceNumber**: String
+- **brand**: String
+- **model**: String
+- **productionYear**: String
 
-GET /vehicles-by-brand – Hämtar fordon med ett specifikt märke. Parametrar: brand (märke på fordon).
+### POST /add-vehicle-to-customer
+Kopplar ett fordon till en kund.  
+Parametrar:
+- **vehicleId**: int
+- **customerId**: int
+
+### GET /customer-id
+Hämtar kund-id och namn baserat på sökning.  
+Parametrar:
+- **name**: String
+
+### GET /customers
+Hämtar alla kunder inklusive deras fordon.  
+Parametrar: inga.
+
+### GET /vehicles
+Hämtar alla fordon.  
+Parametrar: inga.
+
+### GET /vehicles-by-brand
+Hämtar alla fordon av ett visst märke.  
+Parametrar:
+- **brand**: String
 
 **Alla POST-anrop kräver att alla parametrar skickas, annars returneras 400 Bad Request.**

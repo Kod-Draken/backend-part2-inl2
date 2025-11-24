@@ -1,0 +1,21 @@
+meta {
+  name: Skapa kund
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/customer?name=Johnny&phone=0701238721
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: Johnny
+  phone: 0701238721
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

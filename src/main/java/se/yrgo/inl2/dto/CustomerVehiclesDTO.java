@@ -6,18 +6,35 @@ import se.yrgo.inl2.entity.Vehicle;
 import java.util.List;
 
 public class CustomerVehiclesDTO {
-    private Customer customer;
-    private List<Vehicle> vehicles;
+    private int customerId;
+    private String name;
+    private String phoneNumber;
+    private List<VehicleDTO> vehicles;
 
     public CustomerVehiclesDTO(Customer customer, List<Vehicle> vehicles) {
-        this.customer = customer;
-        this.vehicles = vehicles;
+        this.customerId = customer.getId();
+        this.name = customer.getName();
+        this.phoneNumber = customer.getPhoneNumber();
+        this.vehicles = vehicles.stream()
+                .map(VehicleDTO::new)
+                .toList();
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
-    public List<Vehicle> getVehicles() {
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public List<VehicleDTO> getVehicles() {
         return vehicles;
     }
 }
+
+

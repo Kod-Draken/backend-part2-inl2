@@ -21,6 +21,10 @@ public class Customer {
 
     public Customer() {}
 
+    public int getId() {
+        return id;
+    }
+
     public Customer(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -53,5 +57,15 @@ public class Customer {
 
     public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", vehicles=" + vehicles +
+                '}';
     }
 }

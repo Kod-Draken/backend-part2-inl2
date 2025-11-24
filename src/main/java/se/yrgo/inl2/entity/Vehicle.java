@@ -16,7 +16,7 @@ public class Vehicle {
     private String productionYear;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "vehicles")
     private Customer customer;
 
     public Vehicle() {}
@@ -26,6 +26,10 @@ public class Vehicle {
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getLicenseNumber() {
@@ -66,5 +70,17 @@ public class Vehicle {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", licenseNumber='" + licenseNumber + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", productionYear='" + productionYear + '\'' +
+                ", customer=" + customer +
+                '}';
     }
 }

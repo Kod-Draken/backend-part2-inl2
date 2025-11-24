@@ -1,0 +1,128 @@
+{
+  "info": {
+    "name": "Inl2 API",
+    "_postman_id": "c5a6f1d2-8d3b-4b2f-9c68-123456789abc",
+    "description": "Collection för kund- och fordons-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customer?name=Test&phone=0701234567",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customer"],
+          "query": [
+            { "key": "name", "value": "Test" },
+            { "key": "phone", "value": "0701234567" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vehicle?licenceNumber=ABC123&brand=Volvo&model=V70&productionYear=2008",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["vehicle"],
+          "query": [
+            { "key": "licenceNumber", "value": "ABC123" },
+            { "key": "brand", "value": "Volvo" },
+            { "key": "model", "value": "V70" },
+            { "key": "productionYear", "value": "2008" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Vehicle to Customer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/add-vehicle-to-customer?vehicleId=1&customerId=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["add-vehicle-to-customer"],
+          "query": [
+            { "key": "vehicleId", "value": "1" },
+            { "key": "customerId", "value": "1" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Find Customer ID by Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customer-id?name=Test",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customer-id"],
+          "query": [
+            { "key": "name", "value": "Test" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Customers with Vehicles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customers"]
+        }
+      }
+    },
+    {
+      "name": "Get All Vehicles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vehicles",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["vehicles"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicles by Brand",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vehicles-by-brand?brand=Volvo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["vehicles-by-brand"],
+          "query": [
+            { "key": "brand", "value": "Volvo" }
+          ]
+        }
+      }
+    }
+  ]
+}
